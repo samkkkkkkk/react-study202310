@@ -1,19 +1,17 @@
 import React from 'react';
 // css 로딩
-import './Expenseitem.css';
+import './ExpenseItem.css';
+import ExpenseDate from './ExpenseDate';
 
-const Expenseitem = ({ title, price: propsPrice, date }) => {
-  //console.log(props);
+const ExpenseItem = ({ title, price: propsPrice, date }) => {
+  // console.log(props);
 
-  // const price = 999999;
+  // const price = 99999;
   // const expenseDate = date;
   // const expenseTitle = title;
   // const expensePrice = propsPrice;
 
-  // 숫자를 언화표기법으로 바꾸기
-  const formattedPrice = new Intl.NumberFormat('ko-KR').format(expensePrice);
-
-  // 1자기 숫자를 2자리수로 변환하는 함수
+  // 1자리 숫자를 2자리수로 변환하는 함수
   const make2digit = (text) => {
     return text.toString().padStart(2, '0');
   };
@@ -26,15 +24,19 @@ const Expenseitem = ({ title, price: propsPrice, date }) => {
 
     return `${year}년 ${make2digit(month)}월 ${make2digit(day)}일`;
   };
+
+  // 숫자를 원화표기법으로 바꾸기
+  const formattedPrice = new Intl.NumberFormat('ko-KR').format(propsPrice);
+
   return (
     <div className="expense-item">
-      <div>{makeFormattedDate()}</div>
+      <ExpenseDate date={date} />
       <div className="expense-item__description">
-        <h2>{expenseTitle}</h2>
+        <h2>{title}</h2>
         <div className="expense-item__price">{formattedPrice}원</div>
       </div>
     </div>
   );
 };
 
-export default Expenseitem;
+export default ExpenseItem;
