@@ -1,32 +1,47 @@
 import React from 'react';
 import './App.css';
 import Expenseitem from './components/Expenseitem';
-import NoName from './NoName';
 
-function App() {
-  const $h2 = <h2>반가워요~~</h2>;
+const App = () => {
+  //지출 항목 개체 배열
+
+  const expense = [
+    {
+      title: '바나나',
+      price: 2000,
+      date: new Date(2023, 3, 23),
+    },
+    {
+      title: 'BBQ치킨',
+      price: 2000,
+      date: new Date(2023, 3, 23),
+    },
+    {
+      title: '도미노피자',
+      price: 2000,
+      date: new Date(2023, 3, 23),
+    },
+  ];
 
   return (
     <>
-      <NoName />
-      <NoName />
-      <NoName />
-      <NoName />
-      <NoName />
-      <div className="App">
-        <h1>메롱메롱</h1>
-        {$h2}
-      </div>
-      <div className="noname">
-        <input type="text" />
-        <p>
-          오늘은 월요일 입니다.
-          <br />
-          그래서 공부가 하기 싫어요~
-        </p>
-      </div>
+      <Expenseitem
+        title={expense[0].title}
+        price={expense[0].price}
+        date={expense[0].date}
+      />
+      <Expenseitem
+        title={expense[1].title}
+        price={expense[1].price}
+        date={expense[1].date}
+      />
+      <Expenseitem
+        title={expense[2].title}
+        price={expense[2].price}
+        date={expense[2].date}
+      />
     </>
   );
-}
+};
 
 export default App;
