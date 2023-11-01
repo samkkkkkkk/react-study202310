@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Expenses from './components/Expenses';
+import Hello from './Hello';
 
 const App = () => {
   //지출 항목 객체 배열
@@ -22,6 +23,8 @@ const App = () => {
       date: new Date(2023, 7 - 1, 4),
     },
   ];
+
+  console.log('App 실행');
 
   return (
     <>
