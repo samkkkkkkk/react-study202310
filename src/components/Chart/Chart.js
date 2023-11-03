@@ -12,7 +12,7 @@ const Chart = ({ dataPoints }) => {
   const totalValue = dataPointValues.reduce((a, b) => {
     console.log(`a : ${a}, b: ${b}`);
     return a + b;
-  }, 0); //0: 초기값
+  }, 0); //0: 초기 인덱스값
 
   // 그 주에서 제일 지출이 높은 값
   //   const maximumValue = Math.max(...dataPointValues);
