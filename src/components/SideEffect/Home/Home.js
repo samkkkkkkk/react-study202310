@@ -7,7 +7,7 @@ import AuthContext from '../../../store/auth-context';
 
 const Home = () => {
   const { onLogout } = useContext(AuthContext);
-  // console.log('authCtx ', authCtx);
+  // console.log('authCtx: ', authCtx);
 
   return (
     <Card className={styles.home}>

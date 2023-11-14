@@ -9,15 +9,16 @@ const ChartBar = ({ label, currentValue, maxValue }) => {
     const percentage = (currentValue / maxValue) * 100;
     barFillHeight = percentage + '%';
   }
+
   return (
-    <div className="chart-bar">
-      <div className="chart-bar__inner">
+    <div className='chart-bar'>
+      <div className='chart-bar__inner'>
         <div
-          className="chart-bar__fill"
+          className='chart-bar__fill'
           style={{ height: barFillHeight }}
         ></div>
       </div>
-      <div className="chart-bar__label">{label}</div>
+      <div className='chart-bar__label'>{label}</div>
     </div>
   );
 };

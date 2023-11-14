@@ -138,18 +138,18 @@ const Login = () => {
     <Card className={styles.login}>
       <form onSubmit={submitHandler}>
         <Input
-          type="email"
-          id="email"
-          label="E-Mail"
+          type='email'
+          id='email'
+          label='E-Mail'
           value={emailState.value}
           isValid={emailIsValid}
           onChange={emailChangeHandler}
           onBlur={validateEmailHandler}
         />
         <Input
-          type="password"
-          id="password"
-          label="Password"
+          type='password'
+          id='password'
+          label='Password'
           value={passwordState.value}
           isValid={passwordIsValid}
           onChange={passwordChangeHandler}
@@ -157,7 +157,7 @@ const Login = () => {
         />
         <div className={styles.actions}>
           <Button
-            type="submit"
+            type='submit'
             className={styles.btn}
             disabled={!formIsValid}
           >

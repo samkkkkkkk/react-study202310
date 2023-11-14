@@ -38,7 +38,7 @@ const Expenses = ({ items }) => {
     (item) => item.date.getFullYear().toString() === filteredYear
   );
 
-  //조건부 렌더링을 위한 변수
+  // 조건부 렌더링을 위한 변수
   let expenseContent = <p>아직 등록된 지출이 없습니다.</p>;
 
   if (filteredItems.length > 0) {
@@ -53,7 +53,7 @@ const Expenses = ({ items }) => {
   }
 
   return (
-    <Card className="expenses">
+    <Card className='expenses'>
       <ExpensesFilter onChangeFilter={filterChangeHandler} />
       <ExpenseChart expenses={filteredItems} />
       {expenseContent}

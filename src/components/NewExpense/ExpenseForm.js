@@ -35,9 +35,8 @@ const ExpenseForm = ({ onSaveExpense, onToggle }) => {
     e.preventDefault(); // submit 차단
 
     const newExpense = {
-      id: Math.random(),
       title: userInput.title,
-      price: +userInput.price, //앞에 +기호를 붙이면 정수 타입으로 변환가능
+      price: +userInput.price,
       date: new Date(userInput.date),
     };
 
@@ -49,54 +48,55 @@ const ExpenseForm = ({ onSaveExpense, onToggle }) => {
       price: '',
       date: '',
     });
+
     onToggle();
   };
 
-  const cancleInsertHandler = () => {
+  const cancelInsertHandler = () => {
     // console.log('취소 버튼 누름!');
     onToggle();
   };
 
   return (
     <form onSubmit={formSubmitHandler}>
-      <div className="new-expense__controls">
-        <div className="new-expense__control">
+      <div className='new-expense__controls'>
+        <div className='new-expense__control'>
           <label>Title</label>
           <input
-            type="text"
+            type='text'
             onChange={titleChangeHandler}
             value={userInput.title}
           />
         </div>
-        <div className="new-expense__control">
+        <div className='new-expense__control'>
           <label>Price</label>
           <input
-            type="number"
-            min="100"
-            step="100"
+            type='number'
+            min='100'
+            step='100'
             onChange={priceChangeHandler}
             value={userInput.price}
           />
         </div>
-        <div className="new-expense__control">
+        <div className='new-expense__control'>
           <label>Date</label>
           <input
-            type="date"
-            min="2019-01-01"
-            max="2025-12-31"
+            type='date'
+            min='2019-01-01'
+            max='2025-12-31'
             onChange={dateChangeHandler}
             value={userInput.date}
           />
         </div>
       </div>
-      <div className="new-expense__actions">
+      <div className='new-expense__actions'>
         <button
-          type="button"
-          onClick={cancleInsertHandler}
+          type='button'
+          onClick={cancelInsertHandler}
         >
           Cancel
         </button>
-        <button type="submit">Add Expense</button>
+        <button type='submit'>Add Expense</button>
       </div>
     </form>
   );

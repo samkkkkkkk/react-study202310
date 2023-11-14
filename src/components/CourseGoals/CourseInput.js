@@ -4,7 +4,7 @@ import Button from '../UI/Button/Button';
 
 const CourseInput = ({ onAdd }) => {
   const [enteredText, setEnteredText] = useState('');
-  //입력값 검증 상태변수
+  // 입력값 검증 상태변수
   const [isValid, setIsValid] = useState(true);
 
   const textChangeHandler = (e) => {
@@ -32,12 +32,12 @@ const CourseInput = ({ onAdd }) => {
       <div className={`form-control ${!isValid ? 'invalid' : ''}`}>
         <label>나의 목표</label>
         <input
-          type="text"
+          type='text'
           onChange={textChangeHandler}
           value={enteredText}
         />
       </div>
-      <Button type="submit">목표 추가하기</Button>
+      <Button type='submit'>목표 추가하기</Button>
     </form>
   );
 };
